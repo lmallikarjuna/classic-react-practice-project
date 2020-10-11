@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   background-color: var(--background-color);
   --button-color: #04d9ff;
 }
@@ -17,6 +17,7 @@ body {
 }
 
 .light {
+  width: 100%;
   height: 100%;
   --background-color: white;
   background-color: white;
@@ -24,6 +25,7 @@ body {
 }
 
 .dark {
+  width: 100%;
   height: 100%;
   background-color: #2b2b2b;
   --background-color: #2b2b2b;
@@ -39,15 +41,18 @@ body {
 .nav-list-container {
   background-color: var(--background-color);
   color: var(--text-color);
-  padding: 0;
+  padding-left: 1rem;
   display: flex;
 }
 
 .nav-list-item {
+  padding-right: 1rem;
   list-style: none;
 }
 
 .nav-list-item > a {
+  font-size: 1.3rem;
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -58,6 +63,7 @@ body {
 }
 
 .instruction-container {
+  text-align: center;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -125,7 +131,6 @@ body {
 
 .battle-results-container {
   background-color: var(--background-color);
-  border: solid 2px green;
   display: flex;
   flex-direction: column;
   padding-bottom: 3rem;
@@ -135,7 +140,7 @@ body {
 .cards-container {
   background-color: var(--background-color);
   margin: 0 auto;
-  width: 85%;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -156,7 +161,7 @@ img {
 }
 
 .btn {
-  color:var(--text-color);
+  color: var(--text-color);
   font-size: 1.5rem;
   font-weight: 400;
   border-radius: 3px;
@@ -167,4 +172,34 @@ img {
 
 a {
   text-decoration: none;
+}
+
+.language-nav-container {
+  margin: 0;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.language-nav-item {
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+  color: var(--text-color);
+}
+
+.language-nav-item-selected {
+  font-weight: 700;
+  color: #04d9ff;
+}
+
+.language-nav-item:hover {
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  cursor: pointer;
+}
+
+.toggle-btn:focus {
+  outline: none;
 }

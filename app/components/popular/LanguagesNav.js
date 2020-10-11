@@ -6,7 +6,13 @@ export default function LanguageNav({ selected, onUpdatedLanguage }) {
   return (
     <ul className="language-nav-container">
       {languages.map((language, index) => (
-        <div className='language-nav-item' onClick={() => onUpdatedLanguage(language)} key={index}>
+        <div
+          className={`language-nav-item ${
+            selected === language ? "language-nav-item-selected" : null
+          }`}
+          onClick={() => onUpdatedLanguage(language)}
+          key={index}
+        >
           {language}
         </div>
       ))}
