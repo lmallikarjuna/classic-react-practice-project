@@ -10,12 +10,19 @@ export default function Nav() {
         <nav className="nav-container">
           <ul className="nav-list-container">
             <li className="nav-list-item">
-              <NavLink exact activeStyle={{ color: "#04d9ff" }} to="/">
+              <NavLink
+                exact
+                activeStyle={{ color: "#04d9ff", fontWeight: 700 }}
+                to="/"
+              >
                 Popular
               </NavLink>
             </li>
             <li className="nav-list-item">
-              <NavLink to="/battle" activeStyle={{ color: "#04d9ff" }}>
+              <NavLink
+                to="/battle"
+                activeStyle={{ color: "#04d9ff", fontWeight: 700 }}
+              >
                 Battle
               </NavLink>
             </li>

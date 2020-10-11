@@ -49,7 +49,7 @@ export default class PopularRepos extends React.Component {
 
   render() {
     const { repos, selectedLanguage, loading } = this.state;
-    console.log('Props');
+    console.log("Props");
     console.log(this.props);
     return (
       <React.Fragment>
@@ -71,28 +71,30 @@ export default class PopularRepos extends React.Component {
                   username={repo.name}
                 >
                   <ul className="card-list">
-                    <Tooltip text="Github username">
+                    <Tooltip text="Github username" className="card-item">
                       <li>
                         <FaUser color="rgb(255, 191, 116)" size={22} />
 
-                        {repo.owner.login}
+                        <span>{repo.owner.login}</span>
                       </li>
                     </Tooltip>
 
-                    <li>
+                    <li className="card-item">
                       <FaStar color="rgb(255, 215, 0)" size={22} />
-                      {repo.stargazers_count.toLocaleString()} stars
+                      <span>
+                        {repo.stargazers_count.toLocaleString()} stars
+                      </span>
                     </li>
-                    <li>
+                    <li className="card-item">
                       <FaCodeBranch color="rgb(129, 195, 245)" size={22} />
-                      {repo.forks.toLocaleString()} forks
+                      <span>{repo.forks.toLocaleString()} forks</span>
                     </li>
-                    <li>
+                    <li className="card-item">
                       <FaExclamationTriangle
                         color="rgb(241, 138, 147)"
                         size={22}
                       />
-                      {repo.open_issues.toLocaleString()} open
+                      <span>{repo.open_issues.toLocaleString()} open</span>
                     </li>
                   </ul>
                 </Card>

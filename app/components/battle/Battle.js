@@ -67,7 +67,7 @@ export default class Battle extends React.Component {
             />
           )}
           {playerOne && playerTwo ? (
-            <Link to={{
+            <Link className='btn btn-battle' to={{
               pathname: '/battle/results',
               search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
             }}>
