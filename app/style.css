@@ -7,6 +7,7 @@ body {
 }
 
 body {
+  width: 100vw;
   background-color: var(--background-color);
   --button-color: #04d9ff;
 }
@@ -51,6 +52,7 @@ body {
 }
 
 .battle-container {
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
 }
@@ -119,4 +121,50 @@ body {
   background-color: var(--button-color);
   border: none;
   padding: 0.4rem;
+}
+
+.battle-results-container {
+  background-color: var(--background-color);
+  border: solid 2px green;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  align-items: center;
+}
+
+.cards-container {
+  background-color: var(--background-color);
+  margin: 0 auto;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.card {
+  border-radius: 10px;
+  height: min-content;
+  width: min-content;
+  background-color: #32e0c4;
+  margin: 1rem;
+  padding: 0 1rem;
+}
+
+.btn {
+  color:var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-radius: 3px;
+  background-color: #04d9ff;
+  border: none;
+  padding: 0.4rem 3rem;
+}
+
+a {
+  text-decoration: none;
 }

@@ -32,7 +32,7 @@ export default class BattleResult extends React.Component {
     const { winner, loser } = this.state;
     if (winner) {
       return (
-        <React.Fragment>
+        <div className="battle-results-container">
           <div className="cards-container">
             <Card
               header="Winner"
@@ -54,8 +54,10 @@ export default class BattleResult extends React.Component {
               <ProfileList profile={loser.profile} />
             </Card>
           </div>
-          <Link className='btn' to="/battle">Reset</Link>
-        </React.Fragment>
+          <Link className="btn" to="/battle">
+            Reset
+          </Link>
+        </div>
       );
     }
     return <Loading text="Battling" speed={300} />;
