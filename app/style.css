@@ -36,6 +36,7 @@ body {
   display: flex;
   background-color: var(--background-color);
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .nav-list-container {
@@ -155,7 +156,7 @@ img {
   border-radius: 10px;
   height: min-content;
   width: min-content;
-  background-color: #32e0c4;
+  background-color:#00E7EE;
   margin: 1rem;
   padding: 0 1rem;
 }
@@ -202,4 +203,8 @@ a {
 
 .toggle-btn:focus {
   outline: none;
+}
+
+.loading-text  {
+  color: var(--text-color);
 }

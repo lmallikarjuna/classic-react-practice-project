@@ -7,7 +7,7 @@ const styles = {
     position: "absolute",
     left: "0",
     right: "0",
-    marginTop: "20px",
+    marginTop: "40px",
     textAlign: "center",
   },
 };
@@ -31,7 +31,11 @@ export default class Loading extends React.Component {
     window.clearInterval(this.interval);
   }
   render() {
-    return <h1 style={styles.content}>{this.state.content}</h1>;
+    return (
+      <h1 className="loading-text" style={styles.content}>
+        {this.state.content}
+      </h1>
+    );
   }
 }
 
