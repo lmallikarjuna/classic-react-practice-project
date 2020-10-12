@@ -8,16 +8,12 @@ import Loading from "../loading/Loading";
 import ProfileList from "./ProfileList";
 
 export default class BattleResult extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    winner: null,
+    loser: null,
+  };
 
-    this.state = {
-      winner: null,
-      loser: null,
-    };
-  }
-
-  componentDidMount() {
+  componentDidMount = () => {
     console.log(this.props);
     const { playerOne, playerTwo } = queryString.parse(
       this.props.location.search
@@ -25,7 +21,7 @@ export default class BattleResult extends React.Component {
     getWinnerLoser([playerOne, playerTwo]).then((result) =>
       this.setState({ winner: result[0], loser: result[1] })
     );
-  }
+  };
 
   render() {
     const { reset } = this.props;

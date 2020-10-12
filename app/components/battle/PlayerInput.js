@@ -1,23 +1,18 @@
 import React from "react";
 
 export default class PlayerInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-    };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  state = {
+    username: "",
+  };
 
-  handleInputChange(e) {
+  handleInputChange = (e) => {
     this.setState({ username: e.target.value });
-  }
+  };
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.setPlayer(this.state.username);
-  }
+  };
 
   render() {
     const { label } = this.props;
@@ -25,7 +20,9 @@ export default class PlayerInput extends React.Component {
       <form onSubmit={this.handleSubmit} className="player-input-container">
         <label htmlFor="username">{label}</label>
         <input name="username" onChange={this.handleInputChange} />
-        <button className='btn' type="submit">Submit</button>
+        <button className="btn" type="submit">
+          Submit
+        </button>
       </form>
     );
   }

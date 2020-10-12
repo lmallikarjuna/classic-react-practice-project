@@ -13,16 +13,13 @@ import Tooltip from "../tooltip/Tooltip";
 import Loading from "../loading/Loading";
 
 export default class PopularRepos extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      repos: {},
-      selectedLanguage: "All",
-      loading: true,
-    };
-  }
+  state = {
+    repos: {},
+    selectedLanguage: "All",
+    loading: true,
+  };
 
-  componentDidMount() {
+  componentDidMount = () => {
     const { selectedLanguage } = this.state;
     fetchPopularRepos(selectedLanguage).then((data) =>
       this.setState({
@@ -30,9 +27,9 @@ export default class PopularRepos extends React.Component {
         loading: false,
       })
     );
-  }
+  };
 
-  handleUpdateLanguage(language) {
+  handleUpdateLanguage = (language) => {
     this.setState({
       selectedLanguage: language,
     });
@@ -45,12 +42,11 @@ export default class PopularRepos extends React.Component {
         })
       );
     }
-  }
+  };
 
   render() {
     const { repos, selectedLanguage, loading } = this.state;
-    console.log("Props");
-    console.log(this.props);
+
     return (
       <React.Fragment>
         <LanguageNav

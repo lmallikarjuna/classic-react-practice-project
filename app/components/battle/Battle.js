@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import PlayerInput from "./PlayerInput";
 import PlayerPreview from "./PlayerPreview";
@@ -7,37 +7,33 @@ import Instruction from "./Instructions";
 import BattleResult from "./BattleResult";
 
 export default class Battle extends React.Component {
-  constructor(props) {
-    super();
-    this.state = {
-      playerOne: null,
-      playerTwo: null,
-    };
+  state = {
+    playerOne: null,
+    playerTwo: null,
+  };
 
-    this.handleResetBothPlayers = this.handleResetBothPlayers.bind(this);
-  }
-
-  handleResetBothPlayers(){
+  handleResetBothPlayers = () => {
     this.setState({
       playerOne: null,
       playerTwo: null,
     });
-  }
+  };
 
-  handleResetPlayers(player) {
+  handleResetPlayers = (player) => {
     this.setState({ [player]: null, battle: false });
-  }
+  };
 
-  handleSetPlayer(id, username) {
+  handleSetPlayer = (id, username) => {
     this.setState({
       [id]: username,
     });
-  }
+  };
+  
   render() {
-    const { playerOne, playerTwo } = this.state; 
+    const { playerOne, playerTwo } = this.state;
     const { match } = this.props;
     return (
-      <div className='battle-container'>
+      <div className="battle-container">
         <Instruction />
         <div className="input-preview-container">
           {playerOne ? (
@@ -67,12 +63,15 @@ export default class Battle extends React.Component {
             />
           )}
           {playerOne && playerTwo ? (
-            <Link className='btn btn-battle' to={{
-              pathname: '/battle/results',
-              search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
-            }}>
+            <Link
+              className="btn btn-battle"
+              to={{
+                pathname: "/battle/results",
+                search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`,
+              }}
+            >
               Battle
-              </Link>
+            </Link>
           ) : null}
         </div>
       </div>

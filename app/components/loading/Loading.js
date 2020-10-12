@@ -13,13 +13,11 @@ const styles = {
 };
 
 export default class Loading extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      content: props.text,
-    };
+  state = {
+    content: this.props.text,
   }
-  componentDidMount() {
+
+  componentDidMount = () => {
     const { text, speed } = this.props;
     this.interval = window.setInterval(() => {
       this.state.content === text + "..."
@@ -27,9 +25,11 @@ export default class Loading extends React.Component {
         : this.setState(({ content }) => ({ content: content + "." }));
     }, speed);
   }
-  componentWillUnmount() {
+
+  componentWillUnmount = () => {
     window.clearInterval(this.interval);
   }
+  
   render() {
     return (
       <h1 className="loading-text" style={styles.content}>

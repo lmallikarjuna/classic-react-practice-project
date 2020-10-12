@@ -225,10 +225,10 @@ img {
 .card-item {
   display: flex;
   align-items: center;
-  margin: .2rem;
+  margin: 0.2rem;
 }
 
-.card-list  span {
+.card-list span {
   padding-left: 1rem;
   align-items: center;
 }
@@ -248,7 +248,7 @@ img {
 }
 
 .btn-battle {
-  background-color: #FEB868;
+  background-color: #feb868;
 }
 
 a {
