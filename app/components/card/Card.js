@@ -1,15 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../../contexts/theme";
 
-export default function Card({
-  header,
-  avatar_url,
-  score,
-  username,
-  children,
-  href,
-}) {
+export default ({ header, avatar_url, score, username, children, href }) => {
+  const theme = useContext(ThemeContext);
+  
   return (
-    <div className="card">
+    <div className={`card card-${theme}`}>
       <h1>{header}</h1>
       <a href={href} target="_blank">
         <img src={avatar_url} />
@@ -23,4 +19,4 @@ export default function Card({
       {children}
     </div>
   );
-}
+};

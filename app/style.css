@@ -205,11 +205,21 @@ img {
   height: 200px;
 }
 
-.card {
+.card-dark {
   border-radius: 10px;
   height: min-content;
   width: min-content;
   background-color: #00e7ee;
+  margin: 1rem;
+  padding: 0 1rem;
+}
+
+.card-light {
+  border-radius: 10px;
+  height: min-content;
+  width: min-content;
+  border:3px solid #00e7ee;
+  background-color: #bbfdff;
   margin: 1rem;
   padding: 0 1rem;
 }

@@ -10,7 +10,7 @@ import {
 
 import Tooltip from "../tooltip/Tooltip";
 
-export default function App({ profile }) {
+export default ({ profile }) => {
   return (
     <ul className="card-list">
       <li className="card-item">

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function LanguageNav({ selected, onUpdatedLanguage }) {
+export default ({ selected, onUpdatedLanguage }) => {
   const languages = ["All", "JavaScript", "Ruby", "Java", "CSS", "Python"];
 
   return (

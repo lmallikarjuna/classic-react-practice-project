@@ -1,4 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+
+// export default ({ children }) => {
+//   const [hovering, setHovering] = useState(false);
+
+//   const mouseOver = () => {
+//     setHover(true);
+//   }
+
+//   const mouseOut = () => {
+//     setHover(false);
+//   }
+
+//   return (
+//     <div onMouseOver={mouseOver} onMouseOut={mouseOut}>
+//       {children(hovering)}
+//   </div>
+
+//   )
+// }
 
 export default class WithHover extends React.Component {
   state = {

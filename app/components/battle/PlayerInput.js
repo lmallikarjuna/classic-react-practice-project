@@ -1,29 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default class PlayerInput extends React.Component {
-  state = {
-    username: "",
+export default ({ setPlayer, label }) => {
+  const [username, setUsername] = useState("");
+
+  const handleInputChange = (e) => {
+    setUsername(e.target.value);
   };
 
-  handleInputChange = (e) => {
-    this.setState({ username: e.target.value });
-  };
-
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.setPlayer(this.state.username);
+    setPlayer(username);
   };
 
-  render() {
-    const { label } = this.props;
-    return (
-      <form onSubmit={this.handleSubmit} className="player-input-container">
-        <label htmlFor="username">{label}</label>
-        <input name="username" onChange={this.handleInputChange} />
-        <button className="btn" type="submit">
-          Submit
-        </button>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit} className="player-input-container">
+      <label htmlFor="username">{label}</label>
+      <input name="username" onChange={handleInputChange} />
+      <button className="btn" type="submit">
+        Submit
+      </button>
+    </form>
+  );
+};
