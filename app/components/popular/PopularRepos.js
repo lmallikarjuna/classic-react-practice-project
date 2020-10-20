@@ -21,7 +21,7 @@ const reducer = (state, action) => {
   }
 };
 
-export default () => {
+export default function PopularRepos() {
   const [repos, dispatch] = useReducer(reducer, {});
   const [selectedLanguage, setSelectedLanguage] = useState("All");
   const [loading, setLoading] = useState(true);

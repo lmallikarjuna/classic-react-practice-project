@@ -7,39 +7,45 @@ import {
   FaCode,
   FaUser,
 } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 import Tooltip from "../tooltip/Tooltip";
 
-export default ({ profile }) => {
+ProfileList.propTypes = {
+  profile: PropTypes.object.isRequired,
+};
+
+export default function ProfileList({ profile }) {
+  const { name, location, company, followers, following } = profile;
   return (
     <ul className="card-list">
       <li className="card-item">
         <FaUser color="rgb(239, 115, 115)" size={22} />
-        <span>{profile.name}</span>
+        <span>{name}</span>
       </li>
-      {profile.location && (
+      {location && (
         <Tooltip text="User's location">
           <li className="card-item">
             <FaCompass color="rgb(144, 115, 255)" size={22} />
-            <span>{profile.location}</span>
+            <span>{location}</span>
           </li>
         </Tooltip>
       )}
-      {profile.company && (
+      {company && (
         <Tooltip text="User's company">
           <li className="card-item">
             <FaBriefcase color="#795548" size={22} />
-            <span>{profile.company}</span>
+            <span>{company}</span>
           </li>
         </Tooltip>
       )}
       <li className="card-item">
         <FaUsers color="rgb(129, 195, 245)" size={22} />
-        <span>{profile.followers.toLocaleString()} followers</span>
+        <span>{followers.toLocaleString()} followers</span>
       </li>
       <li className="card-item">
         <FaUserFriends color="rgb(64, 183, 95)" size={22} />
-        <span>{profile.following.toLocaleString()} following</span>
+        <span>{following.toLocaleString()} following</span>
       </li>
     </ul>
   );

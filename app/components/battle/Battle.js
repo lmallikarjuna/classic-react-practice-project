@@ -6,7 +6,7 @@ import PlayerPreview from "./PlayerPreview";
 import Instruction from "./Instructions";
 import BattleResult from "./BattleResult";
 
-export default ({ match }) => {
+export default function Battle({ match }) {
   const [playerOne, setPlayerOne] = useState(null);
   const [playerTwo, setPlayerTwo] = useState(null);
 

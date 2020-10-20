@@ -7,7 +7,7 @@ import { ThemeProvider } from "./contexts/theme";
 import Nav from "./components/nav/Nav";
 import BattleResults from "./components/battle/BattleResult";
 
-export default () => {
+export default function App() {
   const [theme, setTheme] = useState("light");
   const toggleTheme = () =>
     setTheme((theme) => (theme === "light" ? "dark" : "light"));

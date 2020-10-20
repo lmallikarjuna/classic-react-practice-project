@@ -218,7 +218,7 @@ img {
   border-radius: 10px;
   height: min-content;
   width: min-content;
-  border:3px solid #00e7ee;
+  border: 3px solid #00e7ee;
   background-color: #bbfdff;
   margin: 1rem;
   padding: 0 1rem;
@@ -297,4 +297,11 @@ a {
 
 .loading-text {
   color: var(--text-color);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 5rem;
 }

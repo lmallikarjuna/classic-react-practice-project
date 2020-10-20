@@ -1,9 +1,24 @@
 import React, { useContext } from "react";
 import ThemeContext from "../../contexts/theme";
+import PropTypes from "prop-types";
 
-export default ({ header, avatar_url, score, username, children, href }) => {
+Card.propTypes = {
+  header: PropTypes.string.isRequired,
+  avatar_url: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+};
+
+export default function Card({
+  header,
+  avatar_url,
+  score,
+  username,
+  href,
+  children,
+}) {
   const theme = useContext(ThemeContext);
-  
+
   return (
     <div className={`card card-${theme}`}>
       <h1>{header}</h1>
@@ -19,4 +34,4 @@ export default ({ header, avatar_url, score, username, children, href }) => {
       {children}
     </div>
   );
-};
+}

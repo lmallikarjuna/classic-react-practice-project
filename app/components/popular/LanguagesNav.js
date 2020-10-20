@@ -1,6 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default ({ selected, onUpdatedLanguage }) => {
+LanguageNav.propTypes = {
+  selected: PropTypes.string.isRequired,
+  onUpdatedLanguage: PropTypes.func.isRequired,
+};
+
+export default function LanguageNav({ selected, onUpdatedLanguage }) {
   const languages = ["All", "JavaScript", "Ruby", "Java", "CSS", "Python"];
 
   return (

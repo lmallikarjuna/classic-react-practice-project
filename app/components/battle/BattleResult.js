@@ -7,7 +7,7 @@ import Card from "../card/Card";
 import Loading from "../loading/Loading";
 import ProfileList from "./ProfileList";
 
-export default ({ reset, location }) => {
+export default function BattleResult({ location }) {
   const [winner, setWinner] = useState(null);
   const [loser, setLoser] = useState(null);
 
@@ -50,5 +50,4 @@ export default ({ reset, location }) => {
     );
   }
   return <Loading text="Battling" speed={300} />;
-};
-
+}

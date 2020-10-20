@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-export default ({ setPlayer, label }) => {
+PlayerInput.propTypes = {
+  setPlayer: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+};
+
+export default function PlayerInput({ setPlayer, label }) {
   const [username, setUsername] = useState("");
 
   const handleInputChange = (e) => {
@@ -21,4 +27,4 @@ export default ({ setPlayer, label }) => {
       </button>
     </form>
   );
-};
+}

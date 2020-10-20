@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import ThemeContext from "../../contexts/theme";
 
-export default ({ toggleTheme }) => {
+Nav.propTypes = {
+  toggleTheme: PropTypes.func.isRequired,
+};
+
+export default function Nav({ toggleTheme }) {
   const theme = useContext(ThemeContext);
   return (
     <nav className="nav-container">
@@ -35,4 +40,4 @@ export default ({ toggleTheme }) => {
       </button>
     </nav>
   );
-};
+}

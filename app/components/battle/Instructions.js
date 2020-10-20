@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import ThemeContext from "../../contexts/theme";
 
-export default () => {
+export default function Instructions() {
   const theme = useContext(ThemeContext);
   return (
     <div className="instruction-container">
